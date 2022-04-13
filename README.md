@@ -2,4 +2,4 @@
 
 ## Database structure
 
-![arf_db](https://user-images.githubusercontent.com/59053718/163231477-7128024b-4894-4060-9190-2030015bfd6b.svg)
+![arf_db](https://user-images.githubusercontent.com/59053718/163231580-5faabb5d-ae4f-4f58-b2fe-828b6b688c7d.png)
