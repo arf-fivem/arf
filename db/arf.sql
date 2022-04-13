@@ -1,0 +1,3 @@
+DROP DATABASE arf;
+CREATE DATABASE arf;
+USE arf;
