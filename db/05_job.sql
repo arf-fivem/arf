@@ -18,8 +18,10 @@ CREATE TABLE IF NOT EXISTS arf_job_grade(
     FOREIGN KEY (job_id) REFERENCES arf_job(id)
 );
 
-CREATE TABLE IF NOT EXISTS user_jobs(
+CREATE TABLE IF NOT EXISTS arf_user_jobs(
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    user_id INT NOT NULL,
     job_grade_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES arf_user(id),
     FOREIGN KEY (job_grade_id) REFERENCES arf_job_grade(id)
 );
