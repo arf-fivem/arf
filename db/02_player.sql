@@ -1,7 +1,7 @@
 /*
-User tables
+Player tables
 
-User <-> Job = m:1
+Player <-> Sex = m:1
 */
 
 CREATE TABLE IF NOT EXISTS arf_sex(
@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS arf_sex(
     abbreviation VARCHAR(8) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS arf_user(
+CREATE TABLE IF NOT EXISTS arf_player(
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     identifier VARCHAR(1024) UNIQUE NOT NULL,
     name_titles VARCHAR(256) NOT NULL,

@@ -13,19 +13,19 @@ CREATE TABLE IF NOT EXISTS arf_item(
     removable TINYINT(1) NOT NULL DEFAULT 1
 );
 
-CREATE TABLE IF NOT EXISTS arf_user_inventory_items(
+CREATE TABLE IF NOT EXISTS arf_player_inventory_items(
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    user_id INT NOT NULL,
+    player_id INT NOT NULL,
     item_id INT NOT NULL,
     `count` INT NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES arf_user(id),
+    FOREIGN KEY (player_id) REFERENCES arf_player(id),
     FOREIGN KEY (item_id) REFERENCES arf_item(id)
 );
 
-CREATE TABLE IF NOT EXISTS arf_user_inventory_weapons(
+CREATE TABLE IF NOT EXISTS arf_player_inventory_weapons(
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    user_id INT NOT NULL,
+    player_id INT NOT NULL,
     weapon_name VARCHAR(128) NOT NULL,
     weapon_data LONGTEXT NOT NULL
-    FOREIGN KEY (user_id) REFERENCES arf_user(id),
+    FOREIGN KEY (player_id) REFERENCES arf_player(id),
 );

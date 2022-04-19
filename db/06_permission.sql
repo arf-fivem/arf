@@ -40,16 +40,16 @@ CREATE TABLE IF NOT EXISTS arf_role_permissions(
     FOREIGN KEY (role_id) REFERENCES arf_role(id)
 );
 
-CREATE TABLE IF NOT EXISTS arf_user_roles(
+CREATE TABLE IF NOT EXISTS arf_player_roles(
     id INT PRIMARY KEY NOT NULL,
-    user_id INT NOT NULL,
+    player_id INT NOT NULL,
     role_id INT NOT NULL,
-    FOREIGN KEY user_identifier REFERENCES arf_user(id),
+    FOREIGN KEY player_identifier REFERENCES arf_player(id),
     FOREIGN KEY role_id REFERENCES arf_role(id)
 );
 
-CREATE TABLE IF NOT EXISTS arf_user_permissions(
-    user_id INT NOT NULL,
+CREATE TABLE IF NOT EXISTS arf_player_permissions(
+    player_id INT NOT NULL,
     permission VARCHAR(1024) NOT NULL,
-    FOREIGN KEY (user_identifier) REFERENCES arf_user(id)
+    FOREIGN KEY (player_identifier) REFERENCES arf_player(id)
 );
