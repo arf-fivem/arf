@@ -12,16 +12,16 @@ CREATE TABLE IF NOT EXISTS arf_job(
 );
 
 CREATE TABLE IF NOT EXISTS arf_job_grade(
-    id INT PRIMARY KEY NOT NULL,
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     job_id INT NOT NULL,
     display_name VARCHAR(128) NOT NULL,
     FOREIGN KEY (job_id) REFERENCES arf_job(id)
 );
 
-CREATE TABLE IF NOT EXISTS user_jobs(
-    id INT NOT NULL AUTO_INCREMENT,
-    job_id INT NOT NULL,
-    grade_id INT NOT NULL,
-    FOREIGN KEY (job_id) REFERENCES arf_job(id),
-    FOREIGN KEY (grade_id) REFERENCES arf_job_grade(id)
+CREATE TABLE IF NOT EXISTS arf_user_jobs(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    job_grade_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES arf_user(id),
+    FOREIGN KEY (job_grade_id) REFERENCES arf_job_grade(id)
 );

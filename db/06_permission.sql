@@ -26,7 +26,7 @@ CREATE TRIGGER arf_role_inheritance_validator
     ON arf_role_inheritance
     FOR EACH ROW
 BEGIN
-    IF NEW.base_role_id == NEW.parent_role_id THEN
+    IF NEW.base_role_id = NEW.parent_role_id THEN
         SIGNAL SQLSTATE VALUE '45000'
         SET MESSAGE_TEXT = 'Role Inheritance - Role cannot inherit from itself';
     END IF;
@@ -44,12 +44,12 @@ CREATE TABLE IF NOT EXISTS arf_player_roles(
     id INT PRIMARY KEY NOT NULL,
     player_id INT NOT NULL,
     role_id INT NOT NULL,
-    FOREIGN KEY player_identifier REFERENCES arf_player(id),
-    FOREIGN KEY role_id REFERENCES arf_role(id)
+    FOREIGN KEY (player_id) REFERENCES arf_player(id),
+    FOREIGN KEY (role_id) REFERENCES arf_role(id)
 );
 
 CREATE TABLE IF NOT EXISTS arf_player_permissions(
     player_id INT NOT NULL,
     permission VARCHAR(1024) NOT NULL,
-    FOREIGN KEY (player_identifier) REFERENCES arf_player(id)
+    FOREIGN KEY (player_id) REFERENCES arf_player(id)
 );

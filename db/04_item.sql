@@ -26,6 +26,6 @@ CREATE TABLE IF NOT EXISTS arf_player_inventory_weapons(
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     player_id INT NOT NULL,
     weapon_name VARCHAR(128) NOT NULL,
-    weapon_data LONGTEXT NOT NULL
+    weapon_data LONGTEXT NOT NULL,
     FOREIGN KEY (player_id) REFERENCES arf_player(id),
 );
